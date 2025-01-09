@@ -2,9 +2,9 @@ import { useState } from "react";
 import imgLikes from "../assets/heart-solid.svg";
 import minus from "../assets/minus.svg";
 function Likes(props) {
-  const [color, set] = useState("white");
+  const [color, set] = useState(imgLikes);
   function qizil() {
-    set((item) => (item === "white" ? "red" : "white"));
+    set((item) => (item === imgLikes ? minus : imgLikes));
   }
   return (
     <div style={{ position: "relative" }}>
@@ -23,7 +23,7 @@ function Likes(props) {
           right: 10.5,
         }}
         onClick={qizil}
-        src={imgLikes}
+        src={color}
         alt=""
         className="mix-blend-multiply	"
       />
