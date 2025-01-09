@@ -1,7 +1,7 @@
 
 
-function Price(props) {
-    return <p>{props.pr}</p>;
+function Price({pr}) {
+    return <p>{pr}</p>;
   }
 
   export default Price

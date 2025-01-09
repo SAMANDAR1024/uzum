@@ -1,14 +1,10 @@
-
-
-
-
 import React from "react";
-import  "./App.css";
+import "./App.css";
 import icon from "./assets/icon.svg";
 import Price from "./components/Price";
 import Likes from "./components/Likes";
 import Icon from "./components/Icon";
-import Uzum from "./components/Uzum"
+import Uzum from "./components/Uzum";
 function App() {
   const product = [
     {
@@ -136,4 +132,3 @@ function App() {
   );
 }
 export default App;
-

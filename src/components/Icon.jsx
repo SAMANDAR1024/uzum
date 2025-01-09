@@ -1,4 +1,4 @@
-function Icon(props) {
-    return <img src={props.icon} alt="" />;
+function Icon({icon}) {
+    return <img src={icon} alt="" />;
   }
 export default Icon  
