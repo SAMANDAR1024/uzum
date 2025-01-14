@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState} from "react";
 import "./App.css";
+import shop from "./assets/shop.svg";
+import Delete from "./assets/icons8-delete.svg";
 import icon from "./assets/icon.svg";
 import Price from "./components/Price";
 import Likes from "./components/Likes";
 import Icon from "./components/Icon";
 import Uzum from "./components/Uzum";
+import Shop from "./components/Shop"
 function App() {
   const product = [
     {
@@ -108,6 +111,23 @@ function App() {
       icon: icon,
     },
   ];
+
+  const [cardState, setCardState] = useState([
+    {
+      rasm: shop,
+      name: "Kir yuvish kukuni Oila tanlovi 2",
+      narx: "26.990som",
+      delete: Delete,
+    },
+    {
+      rasm: shop,
+      name: "Kir yuvish kukuni Oila tanlovi 2",
+      narx: "26.990som",
+      delete: Delete,
+    },
+  ]);
+
+
   return (
     <div
       className=" cardlar"
@@ -125,10 +145,15 @@ function App() {
             kredit={item.kredit}
             com={item.comment}
             icon={item.icon}
+
           />
         );
       })}
+    <Shop cardState={cardState} setCardState={setCardState}/>
+
     </div>
+
+    
   );
 }
 export default App;

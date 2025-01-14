@@ -1,4 +1,4 @@
-function Icon({icon}) {
-    return <img src={icon} alt="" />;
-  }
-export default Icon  
+function Icon({ icon, cardState, setCardState }) {
+  return <img src={icon} alt="" />;
+}
+export default Icon;

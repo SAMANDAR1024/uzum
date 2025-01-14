@@ -3,7 +3,18 @@ import Likes from "./Likes";
 import Icon from "./Icon";
 import { useState } from "react";
 
-function Uzum({ img, name, yulduz, com, kredit, del, pr, icon }) {
+function Uzum({
+  img,
+  name,
+  yulduz,
+  com,
+  kredit,
+  del,
+  pr,
+  icon,
+  cardState,
+  setCardState,
+}) {
   const [number, set] = useState(0);
   function Minus() {
     set((samandar) => (samandar === 0 ? 0 : samandar - 1));
@@ -58,12 +69,14 @@ function Uzum({ img, name, yulduz, com, kredit, del, pr, icon }) {
               justifyContent: "center",
             }}
           >
-           {number > 0 ? (
-            <span style={{display:"flex", alignItems: "center" , gap:5}}>
+            {number > 0 ? (
+              <span style={{ display: "flex", alignItems: "center", gap: 5 }}>
                 <button onClick={Minus}>-</button>
                 <h2>{number}</h2>
-            </span>
-           ) : <span></span>}
+              </span>
+            ) : (
+              <span></span>
+            )}
             <button
               onClick={() => {
                 set(number + 1);
