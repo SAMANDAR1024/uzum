@@ -59,7 +59,22 @@ function Uzum({
               <del>{del}</del>
               <Price pr={pr} />
             </div>
-            <Icon icon={icon} />
+            <button
+              style={{ borderRadius: "70%" }}
+              onClick={() => {
+                const aa = cardState.concat([
+                  {
+                    name: name,
+                    rasm: img,
+                    kredit: kredit,
+                  },
+                ]);
+
+                setCardState(aa);
+              }}
+            >
+              <Icon icon={icon} />
+            </button>
           </div>
           <div
             style={{

@@ -2,10 +2,11 @@ import shop from "../assets/shop.svg";
 import Delete from "../assets/icons8-delete.svg";
 import React, { useState } from "react";
 
-function Shop({cardState, setCardState}) {
- 
- 
-
+function Shop({ cardState, setCardState }) {
+  function ochirish(index) {
+    const newCardState = cardState.filter((_, i) => i !== index);
+    setCardState(newCardState);
+  }
   return (
     <>
       <div
@@ -20,7 +21,11 @@ function Shop({cardState, setCardState}) {
               rasm={item.rasm}
               name={item.name}
               narx={item.narx}
-              delete={Delete}
+              deleteBtn={
+                <button onClick={() => ochirish(index)}>
+                  <img src={Delete} alt="" />
+                </button>
+              }
             />
           );
         })}
@@ -33,8 +38,14 @@ function Shop({cardState, setCardState}) {
             justifyContent: "center",
           }}
         >
-          <button>Tozalash</button>
-          <button>Umumiy</button>
+          <button
+            onClick={() => {
+              setCardState([]);
+            }}
+          >
+            Tozalash
+          </button>
+          <button>Umumiy {cardState.length}</button>
         </div>
       </div>
     </>
@@ -56,7 +67,7 @@ function Karzina(props) {
         <p>{props.name}</p>
         <p>{props.narx}</p>
       </div>
-      <img src={Delete} alt="" />
+      <div>{props.deleteBtn}</div>
     </div>
   );
 }
